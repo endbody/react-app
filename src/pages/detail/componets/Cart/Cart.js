@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+import {reqCartAdd} from "../../../../utils/http"
+import {successAlert} from "../../../../utils/alert"
+
+
 export default class Cart extends Component {
     constructor() {
         super()
@@ -13,12 +17,32 @@ export default class Cart extends Component {
             n: index
         })
     }
+
+    add(){
+
+        reqCartAdd({
+            uid:JSON.parse(localStorage.getItem("userInfo")).uid,
+            goodsid:this.props.detail.id,
+            num:1
+        }).then(res=>{
+          if(res.data.code===200){
+              successAlert(res.data.msg)
+              this.props.hiend()
+          }
+        })
+    }
+
+    isShow(e){
+        if(e.target.className==="shade"){
+            this.props.hiend()
+        }
+    }
     render() {
         let { detail } = this.props
         let { n } = this.state
         return (
             <div>
-                <div className="shade">
+                <div className="shade" onClick={(e)=>this.isShow(e)}>
                     <div className="inner">
                         <div className="title">
                             <img className="pic" src={detail.img} alt="" />

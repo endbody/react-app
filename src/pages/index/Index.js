@@ -8,6 +8,7 @@ import Cate from "../Cate/Cate"
 import Mine from "../Mine/Mine"
 
 
+
 export default class Index extends Component {
     render() {
         return (

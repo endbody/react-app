@@ -8,11 +8,6 @@ import Register from "./pages/register/Register"
 
 
 
-import "./assets/css/reset.css"
-import "./assets/js/rem"
-import "./App.styl"
-
-
 
 export default function App() {
   return (

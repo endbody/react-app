@@ -3,7 +3,7 @@ import Header from "../../componets/Header"
 import "./Detail.styl"
 import Info from "./componets/Info/Info"
 import querystring from "querystring"
-import { reqDetail,reqCartAdd } from "../../utils/http"
+import { reqDetail } from "../../utils/http"
 import { successAlert } from "../../utils/alert"
 import Cart from "./componets/Cart/Cart"
 
@@ -39,17 +39,11 @@ export default class Detail extends Component {
 
     }
 
-    add() {
+    isShow(){
+        
+    }
 
-        // reqCartAdd({
-        //     uid:parse(localStorage.setItem("userInfo")).uid,
-        //     goodsid:this.state.detail.id,
-        //     num:1
-        // }).then(res=>{
-        //   if(res.data.code===200){
-        //       successAlert(res.data.msg)
-        //   }
-        // })
+    add() {
 
         this.setState({
             isShow: !this.state.isShow
@@ -78,7 +72,7 @@ export default class Detail extends Component {
                     <button onClick={() => this.add()}>加入购物车</button>
                 </div>
 
-                {detail.img&&isShow ?  <Cart detail={detail}></Cart>:null}
+                {detail.img&&isShow ?  <Cart detail={detail} hiend={()=>this.add()}></Cart>:null}
             </div>
         )
     }

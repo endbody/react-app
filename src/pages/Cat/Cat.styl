@@ -1,7 +1,12 @@
+@import("../../stylus/index.styl")
 .Cat
+    
     .item
+        position relative
         display: flex;
         margin: .1rem 0
+        overflow hidden
+        background-color #fff
         
         .icon
            margin: 0 .1rem
@@ -16,13 +21,6 @@
                 font-size: .15rem
             .btn-Box
                     margin-top: .1rem
-
-                    input 
-                        width: .4rem
-                        height: .2rem
-                        border: 1px solid #333
-                        vertical-align: top
-                        text-align: center
                     span 
                         display inline-block
                         width: .4rem
@@ -30,10 +28,59 @@
                         text-align: center
                         line-height: .2rem
                         border: 1px solid #333 
+                        vertical-align top
             .AllPrice
                     margin-top: .1rem
         .price
               margin: .1rem    
-                    
-                    
+        .btns
+            position: absolute
+            right: -.8rem
+            top: 0
+            width: .8rem
+            height: 100%
+            background-color #f60
+            text-align: center
+            color: #fff
+            font-size: .15rem
+            line-height: .8rem
+            transition: .3s all 
+        .del
+            right: 0
+           
+    .footer
+        position: fixed
+        left: 0
+        bottom: $footerHeight
+        width: 100vw
+        height: $footerHeight
+        border: 1px solid
+        .edit
+            p
+                 float left
+                 width: .5rem
+                 height 100%
+                 text-align: center
+                 color: #333
+            .allPrice
+                 margin-top: .2rem
+                 width: 1.4rem
+                 text-align: left
+            img 
+                display: block
+                margin: .05rem auto 0
+                width: .2rem
+                height .2rem
+        .btns
+            float right
+            width: .8rem
+            height 100%
+            background-color #f60
+            font-size: .18rem
+            text-align: center
+            line-height:$footerHeight
+            color: #fff 
+        
+
+                            
                     

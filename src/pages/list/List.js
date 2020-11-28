@@ -18,8 +18,9 @@ export default class MaxList extends Component {
             fid:this.props.match.params.id
         }).then(res=>{
             if(res.data.code === 200){
+                let list = res.data.list?res.data.list:[]
                 this.setState({
-                    list:res.data.list
+                    list
                 })
             }
         })
